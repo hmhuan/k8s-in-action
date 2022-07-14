@@ -52,3 +52,33 @@ master node components
 
     Persistent Volume Claim
 	    bind to PV
+
+### ConfigMaps
+Resoure type `ConfigMap`
+
+A ConfigMap allow us to store data in terms of key-value pairs or files. it can be mapped into our pods just like PVC
+### Secrets
+Resoucre name: Secret
+
+Secrets will be stored securely and cannot be read by unauthorized parties.
+
+    define the contains of data as base64 encoded strings
+
+### Namespaces
+
+a separate space for differentating resource names
+
+    kubectl create ns <namespace name>
+
+    kubectl get ns
+
+ConfigMap or Secret can not be shared betwwen Namespaces
+
+### NetworkPolicies
+resource to define firewall rules on the network layer for communication between Pods
+### DaemonSet
+A set of Pods rolled out on each kubernetes node
+### CronJobs
+Similar to Jobs and schaduled via cron expression
+### StatefulSets
+Resource similar to ReplicaSets
