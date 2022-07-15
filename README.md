@@ -1,6 +1,8 @@
 # k8s-in-action
 ## Kubernetes in action notes
 
+## Chapter 01
+
 ### Master node vs worker node
 
 master node components
@@ -35,6 +37,12 @@ master node components
 ### Job 
 
 ### Service
+Service type
+- ClusterIP
+- NodePort
+- LoadBalancer (Range 30000 - 32767)
+- Headless (none)
+
 	kubectl get pods -o wide  - get list of pods
 	kubectl logs <pod name>
 
@@ -82,3 +90,12 @@ A set of Pods rolled out on each kubernetes node
 Similar to Jobs and schaduled via cron expression
 ### StatefulSets
 Resource similar to ReplicaSets
+
+## Chapter 02
+
+Deployment logs
+
+	kubectl logs deployments/<deployment_name> -n <namespace>
+
+	kubectl -n <namespace> describe pods <pod_name>
+
