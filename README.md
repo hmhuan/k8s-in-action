@@ -99,3 +99,10 @@ Deployment logs
 
 	kubectl -n <namespace> describe pods <pod_name>
 
+## Chapter 03
+
+Dev-to-K8s
+
+	A. Local development – Execution on Kubernetes
+	B. Local development – Hybrid execution
+	C. Development on Kubernetes – Execution on Kubernetes
