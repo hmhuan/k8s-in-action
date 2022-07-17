@@ -31,8 +31,13 @@ master node components
 - makes sure k8s runs desired number of replica of podkubectl get rs <name replicaset> 
 
 ### Deployment
+	
 	kubectl get deployment <name replicaset>
-	kubectl rollout undo deployment <name deployment> 
+	kubectl rollout history deploy <name deployment> // check history of deployment
+	kubectl rollout undo deployment <name deployment> --to-revision=<id>
+
+- Default revision history is 10. We can set number of history by **revisionHistoryLimit**
+
 
 ### Job 
 
@@ -86,6 +91,8 @@ ConfigMap or Secret can not be shared betwwen Namespaces
 resource to define firewall rules on the network layer for communication between Pods
 ### DaemonSet
 A set of Pods rolled out on each kubernetes node
+- One node has 1 pod daemonset
+- Using for monitoring or logging
 ### CronJobs
 Similar to Jobs and schaduled via cron expression
 ### StatefulSets
@@ -106,3 +113,21 @@ Dev-to-K8s
 	A. Local development – Execution on Kubernetes
 	B. Local development – Hybrid execution
 	C. Development on Kubernetes – Execution on Kubernetes
+
+Helm chart (...)
+
+## Chapter 04
+
+RESTful Kubenetes API
+
+	Return list Pods of Resource type
+	<protocol://hostname:port>/apis/GROUP/VERSION/RESOURCETYPE
+
+	Return list Pods of Resource type in specific Namespace
+	<protocol://hostname:port>/apis/GROUP/VERSION/namespaces/NAMESPACE/RESOURCETYPE
+
+	Return the resource in the given Namespace with the given name
+	<protocol://hostname:port>/apis/GROUP/VERSION/ 
+	namespaces/NAMESPACE/RESOURCETYPE/NAME
+	
+
