@@ -114,7 +114,9 @@ Dev-to-K8s
 	B. Local development – Hybrid execution
 	C. Development on Kubernetes – Execution on Kubernetes
 
-Helm chart (...)
+Helm chart
+	
+	test
 
 ## Chapter 04
 
