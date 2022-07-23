@@ -33,7 +33,9 @@ master node components
 ### Deployment
 	
 	kubectl get deployment <name replicaset>
+
 	kubectl rollout history deploy <name deployment> // check history of deployment
+	
 	kubectl rollout undo deployment <name deployment> --to-revision=<id>
 
 - Default revision history is 10. We can set number of history by **revisionHistoryLimit**
@@ -75,7 +77,13 @@ Resoucre name: Secret
 
 Secrets will be stored securely and cannot be read by unauthorized parties.
 
-    define the contains of data as base64 encoded strings
+Define the contains of data as base64 encoded strings
+
+	
+	kubectl create secret generic <secret_name> [--from-literal=<key-value>]
+
+	kubectl get secret <secret_name> -o yaml
+
 
 ### Namespaces
 
@@ -130,4 +138,6 @@ RESTful Kubenetes API
 	<protocol://hostname:port>/apis/GROUP/VERSION/ 
 	namespaces/NAMESPACE/RESOURCETYPE/NAME
 	
+Downward API
+
 
